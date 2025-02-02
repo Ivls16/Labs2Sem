@@ -12,4 +12,6 @@ public:
     double Evaluate() const override;
 
     ~BinaryOperation() override;
+
+    int ExpressionType() const override;
 };

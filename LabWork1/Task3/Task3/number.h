@@ -10,4 +10,6 @@ public:
     double Evaluate() const override;
 
     ~Number() override = default;
+
+    int ExpressionType() const override;
 };

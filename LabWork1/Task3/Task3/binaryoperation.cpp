@@ -16,6 +16,10 @@ double BinaryOperation::Evaluate() const {
     }
 }
 
+int BinaryOperation::ExpressionType() const {
+    return 1;
+};
+
 BinaryOperation::~BinaryOperation() {
     delete left;
     delete right;
