@@ -16,7 +16,7 @@ void Figure::setRectOffset(int value) {
     rectOffset = value;
 }
 
-bool Figure::isDragging() {
+bool Figure::isDragging() const {
     return dragging;
 }
 
@@ -35,3 +35,11 @@ void Figure::startDrag(QPointF position) {
     lastMousePos = position;
 }
 
+QPointF Figure::getMassCenterOffset() const {
+    return massCenterOffset;
+}
+
+void Figure::setMassCenterOffset(QPoint offset) {
+    massCenterOffset = offset;
+    update();
+}

@@ -66,6 +66,21 @@ void MyGraphicsView::mousePressEvent(QMouseEvent* event) {
     if (actions->checkedAction()->text() == "Квадрат") {
         currentFigure = new Square(pressPos, 0, this);
     }
+    if (actions->checkedAction()->text() == "Крестик") {
+        currentFigure = new Cross(pressPos, pressPos, this);
+    }
+    if (actions->checkedAction()->text() == "Пятиконечная звезда") {
+        currentFigure = new FiveStar(pressPos, pressPos, this);
+    }
+    if (actions->checkedAction()->text() == "Шестиконечная звезда") {
+        currentFigure = new SixStar(pressPos, pressPos, this);
+    }
+    if (actions->checkedAction()->text() == "Восьмиконечная звезда") {
+        currentFigure = new EightStar(pressPos, pressPos, this);
+    }
+    if (actions->checkedAction()->text() == "Шестиугольник") {
+        currentFigure = new Hexagon(pressPos, pressPos, this);
+    }
     if (actions->checkedAction()->text() == "Не фигура") {
         currentFigure = nullptr;
         setCurrentFigure(event->pos());

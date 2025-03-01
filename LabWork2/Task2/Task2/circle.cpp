@@ -14,6 +14,7 @@ void Circle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
     painter->setPen(pen);
     painter->drawEllipse(QPoint(center.x(), center.y()), int(scaleX * r), int(scaleY * r));
+    painter->drawEllipse(boundingRect().center() + getMassCenterOffset(), 3, 3);
 }
 
 QRectF Circle::boundingRect() const

@@ -10,8 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     circle.cpp \
+    cross.cpp \
+    eightstar.cpp \
     figure.cpp \
     figureinfo.cpp \
+    fivestar.cpp \
+    hexagon.cpp \
     line.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -19,20 +23,28 @@ SOURCES += \
     polygon.cpp \
     rectangle.cpp \
     rhombus.cpp \
+    sixstar.cpp \
     square.cpp \
+    star.cpp \
     triangle.cpp
 
 HEADERS += \
     circle.h \
+    cross.h \
+    eightstar.h \
     figure.h \
     figureinfo.h \
+    fivestar.h \
+    hexagon.h \
     line.h \
     mainwindow.h \
     mygraphicsview.h \
     polygon.h \
     rectangle.h \
     rhombus.h \
+    sixstar.h \
     square.h \
+    star.h \
     triangle.h
 
 FORMS += \

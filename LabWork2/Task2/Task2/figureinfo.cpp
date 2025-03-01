@@ -16,8 +16,10 @@ void FigureInfo::setupFigure(Figure* fg) {
     scaleY->setValue(500);
     lstx = lsty = 500;
     rotation->setValue(figure->rotation());
-    centerX->setText(QString::number(figure->mapToScene(figure->boundingRect().center()).x()));
-    centerY->setText(QString::number(figure->mapToScene(figure->boundingRect().center()).y()));
+
+    centerX->setText(QString::number(figure->getMassCenterOffset().x()));
+    centerY->setText(QString::number(figure->getMassCenterOffset().y()));
+
     area->setText(QString::number(figure->area()));
     perimeter->setText(QString::number(figure->perimeter()));
     settedUp = true;
@@ -46,7 +48,7 @@ void FigureInfo::onRotationChanged() {
     if (!figure || !settedUp) {
         return;
     }
-    figure->setTransformOriginPoint(figure->boundingRect().center());
+    figure->setTransformOriginPoint(figure->boundingRect().center() + figure->getMassCenterOffset());
     figure->setRotation(rotation->value());
 }
 
@@ -54,5 +56,6 @@ void FigureInfo::onCenterChanged() {
     if (!figure || !settedUp) {
         return;
     }
-    figure->setPos(centerX->text().toInt(), centerY->text().toInt());
+    QPoint newOffset(centerX->text().toInt(), centerY->text().toInt());
+    figure->setMassCenterOffset(newOffset);
 }

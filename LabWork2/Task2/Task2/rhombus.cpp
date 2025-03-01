@@ -19,6 +19,7 @@ void Rhombus::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
     QPen pen(Qt::black, 3);
     painter->setPen(pen);
+    painter->drawEllipse(boundingRect().center() + getMassCenterOffset(), 3, 3);
     painter->drawPolygon(points, 4);
 }
 

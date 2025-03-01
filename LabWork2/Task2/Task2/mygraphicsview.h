@@ -17,7 +17,12 @@
 #include "triangle.h"
 #include "rhombus.h"
 #include "square.h"
+#include "cross.h"
 #include "figureinfo.h"
+#include "fivestar.h"
+#include "sixstar.h"
+#include "eightstar.h"
+#include "hexagon.h"
 
 class MyGraphicsView : public QGraphicsView
 {

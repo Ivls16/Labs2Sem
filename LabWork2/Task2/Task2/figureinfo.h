@@ -16,8 +16,8 @@ public:
 
     void setupFigure(Figure*);
 
-    int scaleToPercent(double);
-    double percentToScale(int);
+    int scaleToPercent(double) const;
+    double percentToScale(int) const;
 private:
     Figure* figure = nullptr;
     QSlider* scaleX;

@@ -15,6 +15,7 @@ void Line::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     painter->setPen(pen);
 
     painter->drawLine(first, second);
+    painter->drawEllipse(boundingRect().center() + getMassCenterOffset(), 3, 3);
 }
 
 double Line::area() {

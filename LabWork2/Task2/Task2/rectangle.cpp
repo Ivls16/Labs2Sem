@@ -12,6 +12,7 @@ void Rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
     QPen pen(Qt::black, 3);
     painter->setPen(pen);
+    painter->drawEllipse(boundingRect().center() + getMassCenterOffset(), 3, 3);
     painter->drawRect(std::min(first.x(), second.x()), std::min(first.y(), second.y()), abs(first.x() - second.x()), abs(first.y() - second.y()));
 }
 

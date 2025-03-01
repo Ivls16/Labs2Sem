@@ -16,10 +16,13 @@ public:
     int getRectOffset() const;
     void setRectOffset(int);
 
-    bool isDragging();
+    QPointF getMassCenterOffset() const;
+
+    bool isDragging() const;
     void dragTo(QPointF);
     void startDrag(QPointF);
     void finishDrag();
+    void setMassCenterOffset(QPoint);
 
     virtual void setScaleX(double) = 0;
     virtual void setScaleY(double) = 0;
@@ -30,6 +33,7 @@ private:
     bool dragging = false;
     QPointF lastMousePos;
     MyGraphicsView* parent;
+    QPointF massCenterOffset = QPointF(0, 0);
 };
 
 #endif //FIGURE_H

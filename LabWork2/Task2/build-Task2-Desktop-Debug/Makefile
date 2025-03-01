@@ -53,8 +53,12 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Task2/circle.cpp \
+		../Task2/cross.cpp \
+		../Task2/eightstar.cpp \
 		../Task2/figure.cpp \
 		../Task2/figureinfo.cpp \
+		../Task2/fivestar.cpp \
+		../Task2/hexagon.cpp \
 		../Task2/line.cpp \
 		../Task2/main.cpp \
 		../Task2/mainwindow.cpp \
@@ -62,12 +66,18 @@ SOURCES       = ../Task2/circle.cpp \
 		../Task2/polygon.cpp \
 		../Task2/rectangle.cpp \
 		../Task2/rhombus.cpp \
+		../Task2/sixstar.cpp \
 		../Task2/square.cpp \
+		../Task2/star.cpp \
 		../Task2/triangle.cpp moc_figureinfo.cpp \
 		moc_mainwindow.cpp
 OBJECTS       = circle.o \
+		cross.o \
+		eightstar.o \
 		figure.o \
 		figureinfo.o \
+		fivestar.o \
+		hexagon.o \
 		line.o \
 		main.o \
 		mainwindow.o \
@@ -75,7 +85,9 @@ OBJECTS       = circle.o \
 		polygon.o \
 		rectangle.o \
 		rhombus.o \
+		sixstar.o \
 		square.o \
+		star.o \
 		triangle.o \
 		moc_figureinfo.o \
 		moc_mainwindow.o
@@ -146,18 +158,28 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/lex.prf \
 		../Task2/Task2.pro ../Task2/circle.h \
+		../Task2/cross.h \
+		../Task2/eightstar.h \
 		../Task2/figure.h \
 		../Task2/figureinfo.h \
+		../Task2/fivestar.h \
+		../Task2/hexagon.h \
 		../Task2/line.h \
 		../Task2/mainwindow.h \
 		../Task2/mygraphicsview.h \
 		../Task2/polygon.h \
 		../Task2/rectangle.h \
 		../Task2/rhombus.h \
+		../Task2/sixstar.h \
 		../Task2/square.h \
+		../Task2/star.h \
 		../Task2/triangle.h ../Task2/circle.cpp \
+		../Task2/cross.cpp \
+		../Task2/eightstar.cpp \
 		../Task2/figure.cpp \
 		../Task2/figureinfo.cpp \
+		../Task2/fivestar.cpp \
+		../Task2/hexagon.cpp \
 		../Task2/line.cpp \
 		../Task2/main.cpp \
 		../Task2/mainwindow.cpp \
@@ -165,7 +187,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/spec_pre.prf \
 		../Task2/polygon.cpp \
 		../Task2/rectangle.cpp \
 		../Task2/rhombus.cpp \
+		../Task2/sixstar.cpp \
 		../Task2/square.cpp \
+		../Task2/star.cpp \
 		../Task2/triangle.cpp
 QMAKE_TARGET  = Task2
 DESTDIR       = 
@@ -334,8 +358,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Task2/circle.h ../Task2/figure.h ../Task2/figureinfo.h ../Task2/line.h ../Task2/mainwindow.h ../Task2/mygraphicsview.h ../Task2/polygon.h ../Task2/rectangle.h ../Task2/rhombus.h ../Task2/square.h ../Task2/triangle.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Task2/circle.cpp ../Task2/figure.cpp ../Task2/figureinfo.cpp ../Task2/line.cpp ../Task2/main.cpp ../Task2/mainwindow.cpp ../Task2/mygraphicsview.cpp ../Task2/polygon.cpp ../Task2/rectangle.cpp ../Task2/rhombus.cpp ../Task2/square.cpp ../Task2/triangle.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Task2/circle.h ../Task2/cross.h ../Task2/eightstar.h ../Task2/figure.h ../Task2/figureinfo.h ../Task2/fivestar.h ../Task2/hexagon.h ../Task2/line.h ../Task2/mainwindow.h ../Task2/mygraphicsview.h ../Task2/polygon.h ../Task2/rectangle.h ../Task2/rhombus.h ../Task2/sixstar.h ../Task2/square.h ../Task2/star.h ../Task2/triangle.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Task2/circle.cpp ../Task2/cross.cpp ../Task2/eightstar.cpp ../Task2/figure.cpp ../Task2/figureinfo.cpp ../Task2/fivestar.cpp ../Task2/hexagon.cpp ../Task2/line.cpp ../Task2/main.cpp ../Task2/mainwindow.cpp ../Task2/mygraphicsview.cpp ../Task2/polygon.cpp ../Task2/rectangle.cpp ../Task2/rhombus.cpp ../Task2/sixstar.cpp ../Task2/square.cpp ../Task2/star.cpp ../Task2/triangle.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Task2/mainwindow.ui $(DISTDIR)/
 
 
@@ -387,7 +411,13 @@ moc_mainwindow.cpp: ../Task2/mainwindow.h \
 		../Task2/triangle.h \
 		../Task2/rhombus.h \
 		../Task2/square.h \
+		../Task2/cross.h \
 		../Task2/figureinfo.h \
+		../Task2/fivestar.h \
+		../Task2/star.h \
+		../Task2/sixstar.h \
+		../Task2/eightstar.h \
+		../Task2/hexagon.h \
 		moc_predefs.h \
 		/usr/lib/qt6/libexec/moc
 	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/ivxn/Документы/453502/BoAaP/LabWork2/Task2/build-Task2-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/ivxn/Документы/453502/BoAaP/LabWork2/Task2/Task2 -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Task2/mainwindow.h -o moc_mainwindow.cpp
@@ -417,6 +447,17 @@ circle.o: ../Task2/circle.cpp ../Task2/circle.h \
 		../Task2/figure.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o circle.o ../Task2/circle.cpp
 
+cross.o: ../Task2/cross.cpp ../Task2/cross.h \
+		../Task2/polygon.h \
+		../Task2/figure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cross.o ../Task2/cross.cpp
+
+eightstar.o: ../Task2/eightstar.cpp ../Task2/eightstar.h \
+		../Task2/star.h \
+		../Task2/polygon.h \
+		../Task2/figure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o eightstar.o ../Task2/eightstar.cpp
+
 figure.o: ../Task2/figure.cpp ../Task2/mygraphicsview.h \
 		../Task2/circle.h \
 		../Task2/figure.h \
@@ -426,12 +467,29 @@ figure.o: ../Task2/figure.cpp ../Task2/mygraphicsview.h \
 		../Task2/triangle.h \
 		../Task2/rhombus.h \
 		../Task2/square.h \
-		../Task2/figureinfo.h
+		../Task2/cross.h \
+		../Task2/figureinfo.h \
+		../Task2/fivestar.h \
+		../Task2/star.h \
+		../Task2/sixstar.h \
+		../Task2/eightstar.h \
+		../Task2/hexagon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o figure.o ../Task2/figure.cpp
 
 figureinfo.o: ../Task2/figureinfo.cpp ../Task2/figureinfo.h \
 		../Task2/figure.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o figureinfo.o ../Task2/figureinfo.cpp
+
+fivestar.o: ../Task2/fivestar.cpp ../Task2/fivestar.h \
+		../Task2/star.h \
+		../Task2/polygon.h \
+		../Task2/figure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fivestar.o ../Task2/fivestar.cpp
+
+hexagon.o: ../Task2/hexagon.cpp ../Task2/hexagon.h \
+		../Task2/polygon.h \
+		../Task2/figure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hexagon.o ../Task2/hexagon.cpp
 
 line.o: ../Task2/line.cpp ../Task2/line.h \
 		../Task2/polygon.h \
@@ -448,7 +506,13 @@ main.o: ../Task2/main.cpp ../Task2/mainwindow.h \
 		../Task2/triangle.h \
 		../Task2/rhombus.h \
 		../Task2/square.h \
-		../Task2/figureinfo.h
+		../Task2/cross.h \
+		../Task2/figureinfo.h \
+		../Task2/fivestar.h \
+		../Task2/star.h \
+		../Task2/sixstar.h \
+		../Task2/eightstar.h \
+		../Task2/hexagon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Task2/main.cpp
 
 mainwindow.o: ../Task2/mainwindow.cpp ../Task2/mainwindow.h \
@@ -461,7 +525,13 @@ mainwindow.o: ../Task2/mainwindow.cpp ../Task2/mainwindow.h \
 		../Task2/triangle.h \
 		../Task2/rhombus.h \
 		../Task2/square.h \
+		../Task2/cross.h \
 		../Task2/figureinfo.h \
+		../Task2/fivestar.h \
+		../Task2/star.h \
+		../Task2/sixstar.h \
+		../Task2/eightstar.h \
+		../Task2/hexagon.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Task2/mainwindow.cpp
 
@@ -474,7 +544,13 @@ mygraphicsview.o: ../Task2/mygraphicsview.cpp ../Task2/mygraphicsview.h \
 		../Task2/triangle.h \
 		../Task2/rhombus.h \
 		../Task2/square.h \
-		../Task2/figureinfo.h
+		../Task2/cross.h \
+		../Task2/figureinfo.h \
+		../Task2/fivestar.h \
+		../Task2/star.h \
+		../Task2/sixstar.h \
+		../Task2/eightstar.h \
+		../Task2/hexagon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mygraphicsview.o ../Task2/mygraphicsview.cpp
 
 polygon.o: ../Task2/polygon.cpp ../Task2/polygon.h \
@@ -491,9 +567,20 @@ rhombus.o: ../Task2/rhombus.cpp ../Task2/rhombus.h \
 		../Task2/figure.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rhombus.o ../Task2/rhombus.cpp
 
+sixstar.o: ../Task2/sixstar.cpp ../Task2/sixstar.h \
+		../Task2/star.h \
+		../Task2/polygon.h \
+		../Task2/figure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sixstar.o ../Task2/sixstar.cpp
+
 square.o: ../Task2/square.cpp ../Task2/square.h \
 		../Task2/figure.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o square.o ../Task2/square.cpp
+
+star.o: ../Task2/star.cpp ../Task2/star.h \
+		../Task2/polygon.h \
+		../Task2/figure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o star.o ../Task2/star.cpp
 
 triangle.o: ../Task2/triangle.cpp ../Task2/triangle.h \
 		../Task2/polygon.h \
