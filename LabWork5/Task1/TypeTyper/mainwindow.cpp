@@ -96,7 +96,7 @@ void MainWindow::updateInfo() {
 
 void MainWindow::workWithEvent(QKeyEvent *event) {
     QString a = keys[currLocal][codeSymbolNumber[event->nativeScanCode()]],
-    b = QString(ui->testLabel_2->text()[currNeededSimb * 28 + 20]) ;
+    b = QString(ui->testLabel_2->text()[currNeededSimb * 28 + 20]);
     QString oldText = ui->testLabel_2->text();
     QString eventText = event->text();
     ui->testLabel_2->setText(
@@ -125,6 +125,9 @@ void MainWindow::workWithEvent(QKeyEvent *event) {
     }
 }
 
+QString MainWindow::currentSymbol() {
+    return QString(ui->testLabel_2->text()[currNeededSimb * 28 + 20]);
+}
 void MainWindow::on_stopButton_2_clicked() {
     isTesting = false;
     setButtons();

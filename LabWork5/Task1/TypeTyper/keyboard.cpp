@@ -1,3 +1,4 @@
+#include "mainwindow.h"
 #include "keyboard.h"
 #include "ui_keyboard.h"
 
@@ -92,9 +93,15 @@ void Keyboard::handleButtonClicked() {
 }
 
 void Keyboard::keyPressEvent(QKeyEvent *event) {
+    MainWindow* mw = qobject_cast<MainWindow*>(parent()->parent()->parent());
+    QString currentSymbol = mw->currentSymbol();
     if (event->key() == Qt::Key_Space) {
         QPushButton *button = buttonsMap[100];
-        button->setStyleSheet("background-color: green");
+        if (currentSymbol == button->text()) {
+            button->setStyleSheet("background-color: green");
+        } else {
+            button->setStyleSheet("background-color: red");
+        }
         QTimer::singleShot(200, button, [button]() {
             button->setStyleSheet("");
         });
@@ -104,7 +111,11 @@ void Keyboard::keyPressEvent(QKeyEvent *event) {
     int key = event->nativeScanCode();
     if (buttonsMap.contains(key)) {
         QPushButton *button = buttonsMap[key];
-        button->setStyleSheet("background-color: green");
+        if (currentSymbol == button->text()) {
+            button->setStyleSheet("background-color: green");
+        } else {
+            button->setStyleSheet("background-color: red");
+        }
         QTimer::singleShot(200, button, [button]() {
             button->setStyleSheet("");
         });
@@ -114,7 +125,11 @@ void Keyboard::keyPressEvent(QKeyEvent *event) {
     key = event->text().toInt();
     if (buttonsMap.contains(key)) {
         QPushButton *button = buttonsMap[key];
-        button->setStyleSheet("background-color: green");
+        if (currentSymbol == button->text()) {
+            button->setStyleSheet("background-color: green");
+        } else {
+            button->setStyleSheet("background-color: red");
+        }
         QTimer::singleShot(200, button, [button]() {
             button->setStyleSheet("");
         });

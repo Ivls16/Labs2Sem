@@ -1,0 +1,4 @@
+/home/ivxn/Документы/453502/BoAaP/LabWork5/Task2/cmake-build-debug/CMakeFiles/StringLib.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork5/Task2/cmake-build-debug/CMakeFiles/Task2.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork5/Task2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork5/Task2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -19,6 +19,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void keyPressEvent(QKeyEvent *event) override;
+    QString currentSymbol();
 private slots:
     void on_languageChangeComboBox_2_currentIndexChanged(int index);
     void on_stopButton_2_clicked();
