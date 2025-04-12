@@ -162,7 +162,7 @@ void MainWindow::on_startButton_2_clicked() {
 
 
 void MainWindow::on_openTestButton_2_clicked() {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Открытие"), "//", tr("Текстовые документы (*.txt)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Открытие"), QDir::homePath(), tr("Текстовые документы (*.txt)"));
     QFile openedFile(fileName);
     QTextStream in(&openedFile);
     if (!openedFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
