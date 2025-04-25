@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Ship Creator</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_id">
+        <property name="text">
+         <string>ID</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="idLine"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_name">
+        <property name="text">
+         <string>Name</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="nameLine"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_type">
+        <property name="text">
+         <string>Type</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="typeLine"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_passenger">
+        <property name="text">
+         <string>Passenger</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="passengerLine"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_power">
+        <property name="text">
+         <string>Power</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="powerLine"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_details">
+        <property name="text">
+         <string>Details</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="detailsLine"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="buttonLayout">
+      <item>
+       <widget class="QPushButton" name="explicitCreate">
+        <property name="text">
+         <string>Explicit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="separatelyCreate">
+        <property name="text">
+         <string>Separately</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pointerCreate">
+        <property name="text">
+         <string>Pointer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="referenceCreate">
+        <property name="text">
+         <string>Reference</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="shipLabel">
+      <property name="text">
+       <string>No ship created</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <property name="styleSheet">
+    <string notr="true">
+     QWidget {
+         background-color: #ffe6f9;
+         font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+         font-size: 12pt;
+         color: #6b006b;
+     }
+     QLabel {
+         font-weight: bold;
+         color: #ff66cc;
+     }
+     QLineEdit {
+         background-color: #fff0fb;
+         border: 2px solid #ff99cc;
+         padding: 6px;
+         border-radius: 8px;
+         color: #cc0066;
+     }
+     QPushButton {
+         background-color: qlineargradient(
+             x1: 0, y1: 0, x2: 1, y2: 0,
+             stop: 0 #ff69b4, stop: 1 #ff1493
+         );
+         color: white;
+         font-weight: bold;
+         padding: 8px 14px;
+         border-radius: 10px;
+         border: 1px solid #e75480;
+     }
+     QPushButton:hover {
+         background-color: #ff85b4;
+     }
+     QPushButton:pressed {
+         background-color: #ff3399;
+     }
+     QStatusBar, QMenuBar {
+         background-color: #ffcce6;
+         color: #800040;
+     }
+    </string>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+

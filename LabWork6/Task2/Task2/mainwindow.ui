@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+ 
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Barbie Monitor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBoxMenu">
+      <property name="styleSheet">
+       <string notr="true">
+  QGroupBox {
+      background-color: #ffe6f0;
+      color: #d63384;
+      font-family: "Comic Sans MS";
+      font-weight: bold;
+      font-size: 14pt;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      margin-top: 30px;
+  }
+  QGroupBox::title {
+      subcontrol-origin: margin;
+      subcontrol-position: top center;
+      padding: 8px 12px;
+      background-color: #ffccf9;
+      color: #d63384;
+      border: 1px solid #ff69b4;
+      border-radius: 5px;
+  }
+</string>
+      </property>
+      <property name="title">
+       <string>💖 CAM MENU 💖</string>
+      </property>
+      <layout class="QVBoxLayout" name="menuLayout">
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <property name="styleSheet">
+          <string notr="true">
+QComboBox {
+    background-color: #fff0f5;
+    color: #d63384;
+    font-family: "Comic Sans MS";
+    font-size: 11pt;
+    border: 1px solid #ff69b4;
+    border-radius: 6px;
+    padding: 4px;
+}
+QComboBox QAbstractItemView {
+    background-color: #ffe6f0;
+    color: #ff1493;
+    selection-background-color: #ffb6c1;
+}
+          </string>
+         </property>
+         <!-- Options remain unchanged -->
+         <item><property name="text"><string>0 - Power Down</string></property></item>
+         <item><property name="text"><string>1 - Log text to file</string></property></item>
+         <item><property name="text"><string>2 - Read text from file</string></property></item>
+         <item><property name="text"><string>3 - Write char array</string></property></item>
+         <item><property name="text"><string>4 - Read char array</string></property></item>
+         <item><property name="text"><string>5 - Save struct to file</string></property></item>
+         <item><property name="text"><string>6 - Load struct from file</string></property></item>
+         <item><property name="text"><string>7 - Save struct to BIN</string></property></item>
+         <item><property name="text"><string>8 - Load struct from BIN</string></property></item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxInput">
+      <property name="styleSheet">
+       <string notr="true">
+QGroupBox {
+    background-color: #fff0f5;
+    border: 1px solid #ff69b4;
+    border-radius: 8px;
+}
+       </string>
+      </property>
+      <property name="title"><string/></property>
+      <layout class="QVBoxLayout" name="inputLayout">
+       <item>
+        <widget class="QTextEdit" name="textEdit">
+         <property name="styleSheet">
+          <string notr="true">
+QTextEdit {
+    background-color: #fffafc;
+    color: #c71585;
+    font-family: "Comic Sans MS";
+    font-size: 11pt;
+    border: 1px solid #ff69b4;
+    border-radius: 6px;
+}
+          </string>
+         </property>
+         <property name="placeholderText">
+          <string>Type your Barbie command...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxOutput">
+      <property name="styleSheet">
+       <string notr="true">
+QGroupBox {
+    background-color: #ffe6f0;
+    border: 1px solid #ff69b4;
+    border-radius: 8px;
+}
+       </string>
+      </property>
+      <property name="title"><string/></property>
+      <layout class="QVBoxLayout" name="outputLayout">
+       <item>
+        <widget class="QTextEdit" name="textOutput">
+         <property name="styleSheet">
+          <string notr="true">
+QTextEdit {
+    background-color: #fff0f5;
+    color: #800040;
+    font-family: "Comic Sans MS";
+    font-size: 11pt;
+    border: 1px solid #ff69b4;
+    border-radius: 6px;
+}
+          </string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>✨ Logs from BarbieCam...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+    background-color: #ffb6c1;
+    color: #8b008b;
+    border: 2px solid #ff69b4;
+    border-radius: 8px;
+    font-family: "Comic Sans MS";
+    font-size: 10pt;
+    padding: 6px 14px;
+}
+QPushButton:hover {
+    background-color: #ffc0cb;
+}
+QPushButton:pressed {
+    background-color: #ff69b4;
+    color: #ffffff;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>✨ EXECUTE ✨</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+
