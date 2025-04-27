@@ -1,0 +1,4 @@
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task2/build-SearchTree-Desktop-Debug/CMakeFiles/SearchTree.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task2/build-SearchTree-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task2/build-SearchTree-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task2/build-SearchTree-Desktop-Debug/CMakeFiles/SearchTree_autogen.dir

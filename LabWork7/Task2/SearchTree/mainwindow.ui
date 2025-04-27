@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>💭 Dreamcore Tree 💭</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    
+    <!-- Дерево поиска -->
+    <item>
+     <widget class="QTreeWidget" name="treeWidget">
+      <property name="headerHidden">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+        QTreeWidget {
+            background-color: #f8f8ff;
+            color: #6a5acd;
+            border: 2px solid #d8bfd8;
+            border-radius: 12px;
+            padding: 6px;
+        }
+       </string>
+      </property>
+      <property name="minimumHeight">
+       <number>250</number>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Поля ввода -->
+    <item>
+     <layout class="QHBoxLayout" name="inputLayout">
+      <item>
+       <widget class="QLineEdit" name="lineEditKey">
+        <property name="placeholderText">
+         <string>Введите ключ 🔑</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QLineEdit {
+              background-color: #f0f8ff;
+              color: #6a5acd;
+              font: bold 12pt "Segoe UI";
+              border: 2px solid #b0c4de;
+              border-radius: 10px;
+              padding: 6px;
+          }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditValue">
+        <property name="placeholderText">
+         <string>Введите значение 🌸</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QLineEdit {
+              background-color: #f0f8ff;
+              color: #6a5acd;
+              font: bold 12pt "Segoe UI";
+              border: 2px solid #b0c4de;
+              border-radius: 10px;
+              padding: 6px;
+          }
+         </string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- Кнопки управления деревом -->
+    <item>
+     <layout class="QGridLayout" name="buttonLayout">
+      
+      <item row="0" column="0">
+       <widget class="QPushButton" name="buttonAdd">
+        <property name="text">
+         <string>Добавить узел 🌱</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+              background-color: #dda0dd;
+              color: #4b0082;
+              font: bold 11pt "Segoe UI";
+              border-radius: 12px;
+              border: 1px solid #d8bfd8;
+              padding: 6px 12px;
+          }
+          QPushButton:hover {
+              background-color: #e6e6fa;
+          }
+         </string>
+        </property>
+        <property name="minimumHeight">
+         <number>55</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="0" column="1">
+       <widget class="QPushButton" name="buttonDelete">
+        <property name="text">
+         <string>Удалить узел 🍂</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+              background-color: #dda0dd;
+              color: #4b0082;
+              font: bold 11pt "Segoe UI";
+              border-radius: 12px;
+              border: 1px solid #d8bfd8;
+              padding: 6px 12px;
+          }
+          QPushButton:hover {
+              background-color: #e6e6fa;
+          }
+         </string>
+        </property>
+        <property name="minimumHeight">
+         <number>55</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="1" column="0">
+       <widget class="QPushButton" name="buttonBalance">
+        <property name="text">
+         <string>Балансировать ⚖️</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+              background-color: #dda0dd;
+              color: #4b0082;
+              font: bold 11pt "Segoe UI";
+              border-radius: 12px;
+              border: 1px solid #d8bfd8;
+              padding: 6px 12px;
+          }
+          QPushButton:hover {
+              background-color: #e6e6fa;
+          }
+         </string>
+        </property>
+        <property name="minimumHeight">
+         <number>55</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="1" column="1">
+       <widget class="QPushButton" name="buttonFind">
+        <property name="text">
+         <string>Найти 🔍</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+              background-color: #dda0dd;
+              color: #4b0082;
+              font: bold 11pt "Segoe UI";
+              border-radius: 12px;
+              border: 1px solid #d8bfd8;
+              padding: 6px 12px;
+          }
+          QPushButton:hover {
+              background-color: #e6e6fa;
+          }
+         </string>
+        </property>
+        <property name="minimumHeight">
+         <number>55</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="2" column="0">
+       <widget class="QPushButton" name="buttonPreorder">
+        <property name="text">
+         <string>Прямой обход ⏩</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+              background-color: #dda0dd;
+              color: #4b0082;
+              font: bold 11pt "Segoe UI";
+              border-radius: 12px;
+              border: 1px solid #d8bfd8;
+              padding: 6px 12px;
+          }
+          QPushButton:hover {
+              background-color: #e6e6fa;
+          }
+         </string>
+        </property>
+        <property name="minimumHeight">
+         <number>55</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="2" column="1">
+       <widget class="QPushButton" name="buttonPostorder">
+        <property name="text">
+         <string>Обратный обход ⏪</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+              background-color: #dda0dd;
+              color: #4b0082;
+              font: bold 11pt "Segoe UI";
+              border-radius: 12px;
+              border: 1px solid #d8bfd8;
+              padding: 6px 12px;
+          }
+          QPushButton:hover {
+              background-color: #e6e6fa;
+          }
+         </string>
+        </property>
+        <property name="minimumHeight">
+         <number>55</number>
+        </property>
+       </widget>
+      </item>
+
+      <item row="3" column="0" colspan="2">
+       <widget class="QPushButton" name="buttonInorder">
+        <property name="text">
+         <string>Симметричный обход 🔁</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+              background-color: #dda0dd;
+              color: #4b0082;
+              font: bold 11pt "Segoe UI";
+              border-radius: 12px;
+              border: 1px solid #d8bfd8;
+              padding: 6px 12px;
+          }
+          QPushButton:hover {
+              background-color: #e6e6fa;
+          }
+         </string>
+        </property>
+        <property name="minimumHeight">
+         <number>55</number>
+        </property>
+       </widget>
+      </item>
+
+     </layout>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+

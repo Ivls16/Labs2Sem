@@ -1,0 +1,4 @@
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task1/build-Queue-Desktop-Debug/CMakeFiles/Queue.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task1/build-Queue-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task1/build-Queue-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/ivxn/Документы/453502/BoAaP/LabWork7/Task1/build-Queue-Desktop-Debug/CMakeFiles/Queue_autogen.dir
