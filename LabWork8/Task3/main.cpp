@@ -46,6 +46,7 @@ int main() {
     }
     std::cout << '\n';
     Map<std::string, int> mp;
+    std::cout << "mp[A] is " << mp["A"] << '\n';
     mp["A"] = 10;
     mp["Bebra"] = 15;
     mp["Bebra"] = 3;

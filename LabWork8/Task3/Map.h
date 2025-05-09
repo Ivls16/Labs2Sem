@@ -6,26 +6,12 @@ using MapIterator = NodeIterator<KeyType, ValueType>;
 template<typename KeyType, typename ValueType>
 class Map: public Treap<KeyType, ValueType> {
 public:
-    void insert(KeyType key, ValueType valueType);
-    void erase(KeyType value);
+    using Treap<KeyType, ValueType>::find;
 
-    MapIterator<KeyType, ValueType> begin();
-    MapIterator<KeyType, ValueType> end();
-    MapIterator<KeyType, ValueType> find(KeyType value);
+    void insert(KeyType key, ValueType valueType);
 
     ValueType& operator[](KeyType key);
-    const ValueType& operator[](KeyType key) const;
 };
-
-template<typename KeyType, typename ValueType>
-const ValueType &Map<KeyType, ValueType>::operator[](KeyType key) const {
-    auto node = find(key).node;
-    if (!node) {
-        insert(key, ValueType());
-        node = find(key).node;
-    }
-    return node->value.value;
-}
 
 template<typename KeyType, typename ValueType>
 ValueType &Map<KeyType, ValueType>::operator[](KeyType key) {
@@ -35,26 +21,6 @@ ValueType &Map<KeyType, ValueType>::operator[](KeyType key) {
         node = find(key).node;
     }
     return node->value.value;
-}
-
-template<typename KeyType, typename ValueType>
-MapIterator<KeyType, ValueType> Map<KeyType, ValueType>::find(KeyType value) {
-    return Treap<KeyType, ValueType>::find(value);
-}
-
-template<typename KeyType, typename ValueType>
-MapIterator<KeyType, ValueType> Map<KeyType, ValueType>::end() {
-    return Treap<KeyType, ValueType>::end();
-}
-
-template<typename KeyType, typename ValueType>
-MapIterator<KeyType, ValueType> Map<KeyType, ValueType>::begin() {
-    return Treap<KeyType, ValueType>::begin();
-}
-
-template<typename KeyType, typename ValueType>
-void Map<KeyType, ValueType>::erase(KeyType value) {
-    Treap<KeyType, ValueType>::remove(value);
 }
 
 template<typename KeyType, typename ValueType>

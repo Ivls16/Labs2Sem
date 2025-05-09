@@ -65,10 +65,6 @@ public:
     bool operator == (NodeIterator<KeyType, ValueType> other) {
         return node == other.node;
     }
-
-    bool operator != (NodeIterator<KeyType, ValueType> other) {
-        return node != other.node;
-    }
 };
 
 NodeTemplate
@@ -76,18 +72,18 @@ class Treap {
 private:
     Node<KeyType, ValueType>::Pointer root = nullptr;
 public:
-    void insert(Node<KeyType, ValueType>::NodeType x);
-    void remove(KeyType x);
+    virtual void insert(Node<KeyType, ValueType>::NodeType x);
+    void erase(KeyType x);
     bool contains(KeyType x);
-    virtual void traverse();
+    void traverse();
 
-    virtual NodeIterator<KeyType, ValueType> find(KeyType key);
+    NodeIterator<KeyType, ValueType> find(KeyType key);
 
-    virtual NodeIterator<KeyType, ValueType> begin();
-    virtual NodeIterator<KeyType, ValueType> end();
+    NodeIterator<KeyType, ValueType> begin();
+    NodeIterator<KeyType, ValueType> end();
 };
 
-template<typename KeyType, typename ValueType>
+NodeTemplate
 void Node<KeyType, ValueType>::traverse(Pointer p) {
     if (!p) {
         return;
@@ -97,7 +93,7 @@ void Node<KeyType, ValueType>::traverse(Pointer p) {
     traverse(p->r);
 }
 
-template<typename KeyType, typename ValueType>
+NodeTemplate
 Node<KeyType, ValueType>::Pointer Node<KeyType, ValueType>::find(Pointer p, KeyType x) {
     if (!p) {
         return nullptr;
@@ -112,27 +108,19 @@ Node<KeyType, ValueType>::Pointer Node<KeyType, ValueType>::find(Pointer p, KeyT
     }
 }
 
-template<typename KeyType, typename ValueType>
+NodeTemplate
 NodeIterator<KeyType, ValueType> Treap<KeyType, ValueType>::find(KeyType key) {
     return NodeIterator<KeyType, ValueType>(Node<KeyType, ValueType>::find(root, key));
 }
 
-template<typename KeyType, typename ValueType>
+NodeTemplate
 NodeIterator<KeyType, ValueType> Treap<KeyType, ValueType>::begin() {
-    NodeIterator<KeyType, ValueType> it(root);
-    while (it.node->prev) {
-        --it;
-    }
-    return it;
+    return NodeIterator<KeyType, ValueType>(Node<KeyType, ValueType>::getMin(root));
 }
 
-template<typename KeyType, typename ValueType>
+NodeTemplate
 NodeIterator<KeyType, ValueType> Treap<KeyType, ValueType>::end() {
-    NodeIterator<KeyType, ValueType> it(root);
-    while (it.node->next) {
-        ++it;
-    }
-    return it;
+    return NodeIterator<KeyType, ValueType>(Node<KeyType, ValueType>::getMax(root));
 }
 
 NodeTemplate
@@ -184,20 +172,10 @@ void Node<KeyType, ValueType>::update(Node<KeyType, ValueType>::Pointer p) {
 
 NodeTemplate
 bool Node<KeyType, ValueType>::contains(Node<KeyType, ValueType>::Pointer p, KeyType x) {
-    if (!p) {
-        return false;
-    }
-    if (p->value.key == x) {
-        return true;
-    }
-    if (p->value.key > x) {
-        return contains(p->l, x);
-    } else {
-        return contains(p->r, x);
-    }
+    return find(p, x) != nullptr;
 }
 
-template<typename KeyType, typename ValueType>
+NodeTemplate
 Node<KeyType, ValueType>::Pointer Node<KeyType, ValueType>::getMin(Node::Pointer p) {
     if (!p) {
         return nullptr;
@@ -209,7 +187,7 @@ Node<KeyType, ValueType>::Pointer Node<KeyType, ValueType>::getMin(Node::Pointer
     }
 }
 
-template<typename KeyType, typename ValueType>
+NodeTemplate
 Node<KeyType, ValueType>::Pointer Node<KeyType, ValueType>::getMax(Node::Pointer p) {
     if (!p) {
         return nullptr;
@@ -242,7 +220,7 @@ void Treap<KeyType, ValueType>::insert(Node<KeyType, ValueType>::NodeType x) {
 }
 
 NodeTemplate
-void Treap<KeyType, ValueType>::remove(KeyType x) {
+void Treap<KeyType, ValueType>::erase(KeyType x) {
     auto [l, r] = Node<KeyType, ValueType>::split(root, x);
     auto [l1, l2] = Node<KeyType, ValueType>::split(l, x - 1);
     auto mx1 = Node<KeyType, ValueType>::getMax(l1);
